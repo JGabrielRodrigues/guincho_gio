@@ -75,7 +75,7 @@ _Aguardo retorno!_`;
                   type="tel"
                   id="phone"
                   name="phone"
-                  placeholder="(11) 99999-9999"
+                  placeholder="(11) 92198-6009"
                   value={formData.phone}
                   onChange={handleChange}
                   required
@@ -104,8 +104,6 @@ _Aguardo retorno!_`;
                   onChange={handleChange}
                 >
                   <option value="">Selecione um serviço</option>
-                  <option value="Guincho Puro">Guincho Puro</option>
-                  <option value="Guincho com Acionamento">Guincho com Acionamento</option>
                   <option value="Reboque">Reboque</option>
                   <option value="Transporte">Transporte</option>
                 </select>
