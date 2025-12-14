@@ -76,9 +76,6 @@ export default function Carousel() {
                     className="slide-image"
                     loading="lazy"
                   />
-                  <div className="slide-overlay">
-                    <span className="slide-label">Trabalho #{index + 1}</span>
-                  </div>
                 </div>
               </div>
             ))}
