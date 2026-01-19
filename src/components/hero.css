@@ -34,7 +34,7 @@
 
 /* Logo */
 .hero-logo {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   animation: fadeInDown 1s ease-out;
   display: flex;
   justify-content: center;
@@ -69,7 +69,7 @@
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   animation: pulse 2s infinite;
   box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
 }
@@ -84,7 +84,7 @@
   font-size: 3.5rem;
   font-weight: 900;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   line-height: 1.2;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
@@ -315,21 +315,30 @@
   }
   
   .hero-container {
-    padding: 40px 20px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   
+  .hero-logo {
+    margin-bottom: 25px;
+  }
+  
   .logo-image {
     max-width: 250px;
+  }
+  
+  .hero-badge {
+    margin-bottom: 25px;
   }
   
   .hero-title {
     font-size: 2.2rem;
     text-align: center;
     padding: 0 10px;
+    margin-bottom: 25px;
   }
   
   .hero-subtitle {
@@ -372,26 +381,32 @@
 
 @media (max-width: 480px) {
   .hero-container {
-    padding: 30px 15px;
+    padding: 25px 15px;
+  }
+  
+  .hero-logo {
+    margin-bottom: 20px;
   }
   
   .logo-image {
     max-width: 200px;
   }
   
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 8px 18px;
+    margin-bottom: 20px;
+  }
+  
   .hero-title {
     font-size: 1.9rem;
     padding: 0 5px;
+    margin-bottom: 20px;
   }
   
   .hero-subtitle {
     font-size: 1rem;
     padding: 0 5px;
-  }
-  
-  .hero-badge {
-    font-size: 0.75rem;
-    padding: 8px 18px;
   }
   
   .btn-primary,
@@ -403,6 +418,7 @@
   
   .hero-buttons {
     max-width: 280px;
+    gap: 12px;
   }
   
   .feature-item {
@@ -416,12 +432,25 @@
 }
 
 @media (max-width: 375px) {
+  .hero-container {
+    padding: 20px 15px;
+  }
+  
+  .hero-logo {
+    margin-bottom: 18px;
+  }
+  
   .logo-image {
     max-width: 180px;
   }
   
+  .hero-badge {
+    margin-bottom: 18px;
+  }
+  
   .hero-title {
     font-size: 1.7rem;
+    margin-bottom: 18px;
   }
   
   .hero-subtitle {
@@ -437,6 +466,7 @@
   
   .hero-buttons {
     max-width: 260px;
+    gap: 10px;
   }
   
   .feature-item {
