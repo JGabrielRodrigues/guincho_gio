@@ -105,10 +105,12 @@
   line-height: 1.6;
 }
 
-/* Buttons */
+/* ===================== */
+/* BUTTONS               */
+/* ===================== */
 .hero-buttons {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -116,45 +118,75 @@
   width: 100%;
 }
 
+/* Botão base compartilhado */
 .btn-primary,
-.btn-secondary {
+.btn-whatsapp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 40px;
+  padding: 18px 40px;
   border-radius: 50px;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
+/* Botão Ligar — laranja vibrante */
 .btn-primary {
   background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
   color: white;
+  box-shadow:
+    0 4px 20px rgba(249, 115, 22, 0.45),
+    0 1px 0 rgba(255, 255, 255, 0.15) inset;
+  animation: ringPulse 2.5s ease-in-out infinite;
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 12px 35px rgba(249, 115, 22, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  filter: brightness(1.08);
+  animation: none;
 }
 
-.btn-secondary {
-  background: white;
-  color: #1e3a8a;
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.99);
 }
 
-.btn-secondary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
-  background: #f8f9fa;
+/* Botão WhatsApp — verde whatsapp oficial */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #22c55e 100%);
+  color: white;
+  box-shadow:
+    0 4px 20px rgba(37, 211, 102, 0.45),
+    0 1px 0 rgba(255, 255, 255, 0.15) inset;
 }
 
+.btn-whatsapp:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow:
+    0 12px 35px rgba(37, 211, 102, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  filter: brightness(1.08);
+}
+
+.btn-whatsapp:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Ícone dentro dos botões */
 .btn-icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 /* Hero Features */
@@ -236,70 +268,55 @@
   margin: 0;
 }
 
-/* Animations */
+/* ===================== */
+/* ANIMATIONS            */
+/* ===================== */
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
-  }
-  50% {
-    box-shadow: 0 4px 30px rgba(249, 115, 22, 0.6);
-  }
+  0%, 100% { box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4); }
+  50%       { box-shadow: 0 4px 30px rgba(249, 115, 22, 0.6); }
 }
 
 @keyframes shake {
   0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-10deg); }
-  75% { transform: rotate(10deg); }
+  25%       { transform: rotate(-10deg); }
+  75%       { transform: rotate(10deg); }
 }
 
 @keyframes bounce {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-10px);
-  }
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(-10px); }
 }
 
 @keyframes scroll {
-  0% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(15px);
-  }
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(15px); }
 }
 
-/* Responsive */
+/* Pulso de telefone: simula vibração suave */
+@keyframes ringPulse {
+  0%, 90%, 100% { box-shadow: 0 4px 20px rgba(249, 115, 22, 0.45); }
+  93%            { box-shadow: 0 4px 28px rgba(249, 115, 22, 0.7), 0 0 0 6px rgba(249, 115, 22, 0.12); }
+  96%            { box-shadow: 0 4px 20px rgba(249, 115, 22, 0.45); }
+}
+
+/* ===================== */
+/* RESPONSIVE            */
+/* ===================== */
 @media (max-width: 1024px) {
   .hero-title {
     font-size: 3rem;
   }
-  
+
   .logo-image {
     max-width: 300px;
   }
@@ -313,7 +330,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .hero-container {
     padding: 30px 20px;
     display: flex;
@@ -321,155 +338,124 @@
     align-items: center;
     justify-content: center;
   }
-  
-  .hero-logo {
-    margin-bottom: 25px;
-  }
-  
-  .logo-image {
-    max-width: 250px;
-  }
-  
-  .hero-badge {
-    margin-bottom: 25px;
-  }
-  
+
+  .hero-logo        { margin-bottom: 25px; }
+  .logo-image       { max-width: 250px; }
+  .hero-badge       { margin-bottom: 25px; }
+
   .hero-title {
     font-size: 2.2rem;
     text-align: center;
     padding: 0 10px;
     margin-bottom: 25px;
   }
-  
+
   .hero-subtitle {
     font-size: 1.1rem;
     text-align: center;
     padding: 0 10px;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
     width: 100%;
     max-width: 320px;
     margin: 0 auto 50px;
   }
-  
+
   .btn-primary,
-  .btn-secondary {
+  .btn-whatsapp {
     width: 100%;
+    max-width: 320px;
     justify-content: center;
+    padding: 17px 30px;
   }
-  
+
   .hero-features {
     flex-direction: column;
     gap: 15px;
     width: 100%;
   }
-  
+
   .feature-item {
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
     justify-content: center;
   }
-  
-  .scroll-indicator {
-    display: none;
-  }
+
+  .scroll-indicator { display: none; }
 }
 
 @media (max-width: 480px) {
-  .hero-container {
-    padding: 25px 15px;
-  }
-  
-  .hero-logo {
-    margin-bottom: 20px;
-  }
-  
-  .logo-image {
-    max-width: 200px;
-  }
-  
+  .hero-container { padding: 25px 15px; }
+  .hero-logo      { margin-bottom: 20px; }
+  .logo-image     { max-width: 200px; }
+
   .hero-badge {
     font-size: 0.75rem;
     padding: 8px 18px;
     margin-bottom: 20px;
   }
-  
+
   .hero-title {
     font-size: 1.9rem;
     padding: 0 5px;
     margin-bottom: 20px;
   }
-  
+
   .hero-subtitle {
     font-size: 1rem;
     padding: 0 5px;
   }
-  
+
   .btn-primary,
-  .btn-secondary {
-    padding: 14px 30px;
+  .btn-whatsapp {
+    padding: 15px 28px;
     font-size: 1rem;
-    max-width: 280px;
+    max-width: 290px;
+    gap: 9px;
   }
-  
+
+  .btn-icon {
+    width: 20px;
+    height: 20px;
+  }
+
   .hero-buttons {
-    max-width: 280px;
+    max-width: 290px;
     gap: 12px;
   }
-  
+
   .feature-item {
     max-width: 280px;
     padding: 12px 20px;
   }
-  
-  .feature-icon {
-    font-size: 1.5rem;
-  }
+
+  .feature-icon { font-size: 1.5rem; }
 }
 
 @media (max-width: 375px) {
-  .hero-container {
-    padding: 20px 15px;
-  }
-  
-  .hero-logo {
-    margin-bottom: 18px;
-  }
-  
-  .logo-image {
-    max-width: 180px;
-  }
-  
-  .hero-badge {
-    margin-bottom: 18px;
-  }
-  
+  .hero-container { padding: 20px 15px; }
+  .hero-logo      { margin-bottom: 18px; }
+  .logo-image     { max-width: 180px; }
+  .hero-badge     { margin-bottom: 18px; }
+
   .hero-title {
     font-size: 1.7rem;
     margin-bottom: 18px;
   }
-  
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-  
+
+  .hero-subtitle { font-size: 0.95rem; }
+
   .btn-primary,
-  .btn-secondary {
-    padding: 12px 25px;
+  .btn-whatsapp {
+    padding: 14px 24px;
     font-size: 0.95rem;
-    max-width: 260px;
+    max-width: 270px;
   }
-  
-  .hero-buttons {
-    max-width: 260px;
-    gap: 10px;
-  }
-  
-  .feature-item {
-    max-width: 260px;
-  }
+
+  .hero-buttons { max-width: 270px; gap: 10px; }
+  .feature-item { max-width: 260px; }
 }
